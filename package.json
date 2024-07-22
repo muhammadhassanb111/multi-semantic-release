@@ -1,4 +1,6 @@
 {
+  "name": "your-package-name",
+  "version": "1.0.0",
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^10.1.1",
