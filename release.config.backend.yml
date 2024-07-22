@@ -3,10 +3,20 @@ branches:
 repositoryUrl: https://github.com/muhammadhassanb111/multi-semantic-release.git
 tagFormat: 'backend-v${version}'
 plugins:
-  - '@semantic-release/commit-analyzer'
+  - '@semantic-release/commit-analyzer':
+      releaseRules:
+        - type: feat
+          scope: backend
+          release: minor
+        - type: fix
+          scope: backend
+          release: patch
+        - type: chore
+          scope: backend
+          release: none
   - '@semantic-release/release-notes-generator'
-  - - '@semantic-release/git'
-    - assets:
+  - '@semantic-release/git':
+      assets:
         - 'dist/*.js'
         - 'dist/*.js.map'
       message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
